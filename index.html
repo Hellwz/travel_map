@@ -1,0 +1,373 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>旅游地图</title>
+    <script src="js/lib/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="js/lib/raphael-min.js"></script>
+    <script type="text/javascript" src="js/res/chinaMapConfig.js"></script>
+    <script type="text/javascript" src="js/map-min.js"></script>
+    <style>
+        *{margin:0;padding:0;border: none;}
+        body { color: #333; text-align: center; font: 12px "微软雅黑";background-color: #dcf5ed; }
+        .mapTipText{width: 280px;min-height: 110px;height:auto; display:inline-block !important; display:inline;background-color: #ffffff;}
+        .mapTipText .mapTipImg{height: 66px; width: 66px; float: left;border: 2px solid #ffffff; border-radius: 50%;overflow: hidden;margin: -12px 5px 0 -12px;}
+        .mapTipText .mapTipImg img{width: 100%;height: 100%;}
+        .mapTipText .mapTipList{float: left;margin-left: 4px;}
+        .mapTipText .mapTipList h2{text-align: left;padding-top: 6px;padding-bottom: 4px;}
+        .mapTipText .mapTipList h2 a{font-size: 24px; color: #262626;text-decoration:none;}
+        .mapTipText .mapTipList h2 a:hover{ color: #0085d2;}
+        .mapTipText .mapTipList h2 a span{font-size: 16px;margin-left: 3px;}
+        .mapTipText .mapTipList ul{ width: 203px;padding-right: 10px;}
+        .mapTipText .mapTipList ul li{list-style: none;float: none;padding: 2px 3px 2px 3px;}
+        .mapTipText .mapTipList ul li a{color: #262626;text-decoration:none;}
+        .mapTipText .mapTipList ul li a:hover{background-color:#2ebcfe;color:#ffffff;}
+    </style>
+    <script type="text/javascript">
+        var w=window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+        var h=window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+        $(function(){
+            $('#ChinaMap').SVGMap({
+                mapWidth: w * 0.9,
+                mapHeight: h * 0.9
+            });
+        });
+        var times = {
+            heilongjiang: 0,
+            jilin: 0,
+            liaoning: 0,
+            hebei: 0,
+            shandong: 0,
+            jiangsu: 0,
+            zhejiang: 0,
+            anhui: 0,
+            henan: 0,
+            shanxi: 0,
+            shaanxi: 0,
+            gansu: 0,
+            hubei: 0,
+            jiangxi: 0,
+            fujian: 0,
+            hunan: 0,
+            guizhou: 0,
+            sichuan: 0,
+            yunnan: 0,
+            qinghai: 0,
+            hainan: 0,
+            shanghai: 0,
+            chongqing: 0,
+            tianjin: 0,
+            beijing: 0,
+            neimongol: 0,
+            guangxi: 0,
+            xinjiang: 0,
+            xizang: 0,
+            guangdong: 0,
+            ningxia: 0,
+            hongkong: 0,
+            taiwan: 0,
+            macau: 0
+        }
+    </script>
+</head>
+<body>
+<div class="wrap" style="margin-top: 50px;">
+    <!--兼容性 支持 IE7+，谷歌，火狐-->
+
+    <div class="itemCon" style="float: left">
+        <h1>我的旅游地图</h1>
+        <div id="ChinaMap" style="margin: auto;"></div>
+        <div id="stateTip" style="position: absolute;left: 100%;text-align: left;display: inline;"></div>
+    </div>
+	
+    <div id="mapTipContent" style="width: 900px;margin: 0 auto;display: none">
+
+        <div class="mapTipText mapTipText17">
+            <div class="mapTipImg"><img src="images/avatar.jpg" alt=""/></div>
+            <div class="mapTipList">
+                <h2>四川<span>Sichuan</span></h2>
+                <ul>
+                    <li>不完全统计：</li>
+                    <li>成都 绵阳 雅安 攀枝花 德阳 广元 遂宁 内江 乐山 资阳 宜宾 南充 眉山 甘孜州 阿坝州 凉山州</li>
+                    <li>都江堰 彭州 崇州 邛崃 简阳 江油 广汉 绵竹 峨眉 阆中 马尔康 康定 西昌</li>
+                    <li>若尔盖 色达 壤塘 泸定 新都桥 红原 九龙 汶川 北川 茂县 理县 剑阁 南部</li>
+                    <li>贡嘎山 西岭雪山 海螺沟 蜀南竹海 龙门山 碧峰峡 伍须海 花湖 马湖 龙池 天台山 夹金山 二郎山 瓦屋山 寻龙山 鸡冠山 九寨沟 毕棚沟 桃坪羌寨</li>
+                    <li>省内地图待开发</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mapTipText mapTipText22">
+            <div class="mapTipImg"><img src="images/avatar.jpg" alt=""/></div>
+            <div class="mapTipList">
+                <h2>重庆<span>Chongqing</span></h2>
+                <ul>
+                    <li>2018年1月 重庆</li>
+                    <li>2016年4月 重庆</li>
+                    <li>2013年5月 重庆</li>
+                    <li>2009年10月 重庆</li>
+                    <li>2009年4月 重庆</li>
+                    <li>2008年6月 重庆</li>
+                    <li>2005年6月 重庆</li>
+                    <li>2005年4月 重庆</li>
+                    <li>2002年11月 重庆</li>
+                    <li>2001年5月 重庆</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mapTipText mapTipText10">
+            <div class="mapTipImg"><img src="images/avatar.jpg" alt=""/></div>
+            <div class="mapTipList">
+                <h2>陕西<span>Shaanxi</span></h2>
+                <ul>
+                    <li>2011年11月 自驾</li>
+                    <li>2002年10月 西安 自驾</li>
+                    <li>2001年10月 咸阳</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mapTipText mapTipText18">
+            <div class="mapTipImg"><img src="images/avatar.jpg" alt=""/></div>
+            <div class="mapTipList">
+                <h2>云南<span>Yunnan</span></h2>
+                <ul>
+                    <li>2018年2月 云贵环线 昆明 大理 自驾</li>
+                    <li>2016年8月 抚仙湖 自驾</li>
+                    <li>2015年8月 抚仙湖 自驾</li>
+                    <li>2013年7月 丽江 腾冲 瑞丽 中缅边境 自驾</li>
+                    <li>2010年2月 西双版纳</li>
+                    <li>2004年11月 丽江 自驾</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mapTipText mapTipText16">
+            <div class="mapTipImg"><img src="images/avatar.jpg" alt=""/></div>
+            <div class="mapTipList">
+                <h2>贵州<span>Guizhou</span></h2>
+                <ul>
+                    <li>2019年2月 穿省 自驾</li>
+                    <li>2018年2月 云贵环线 自驾</li>
+                    <li>2014年8月 自驾</li>
+                    <li>2006年2月 贵阳 都匀 驾车</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mapTipText mapTipText19">
+            <div class="mapTipImg"><img src="images/avatar.jpg" alt=""/></div>
+            <div class="mapTipList">
+                <h2>青海<span>Qinghai</span></h2>
+                <ul>
+                    <li>2018年8月 西行两万里 穿省 自驾 </li>
+                    <li>2005年5月 自驾</li>
+                    <li>2004年5月 青海湖 自驾</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mapTipText mapTipText30">
+            <div class="mapTipImg"><img src="images/avatar.jpg" alt=""/></div>
+            <div class="mapTipList">
+                <h2>广东<span>Guangdong</span></h2>
+                <ul>
+                    <li>2019年8月 深圳 广州 参会</li>
+                    <li>2005年2月 广州</li>
+                    <li>2004年4月 深圳 广州</li>
+                    <li>2001年8月 深圳 广州 珠海</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mapTipText mapTipText27">
+            <div class="mapTipImg"><img src="images/avatar.jpg" alt=""/></div>
+            <div class="mapTipList">
+                <h2>广西<span>Guangxi</span></h2>
+                <ul>
+                    <li>2019年2月 防城港 中越边境 自驾</li>
+                    <li>2014年8月 柳州 自驾</li>
+                    <li>2006年2月 德天瀑布 中越边境 驾车</li>
+                    <li>2004年1月 北海</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mapTipText mapTipText29">
+            <div class="mapTipImg"><img src="images/avatar.jpg" alt=""/></div>
+            <div class="mapTipList">
+                <h2>西藏<span>Tibet</span></h2>
+                <ul>
+                    <li>2005年5月 拉萨 自驾</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mapTipText mapTipText20">
+            <div class="mapTipImg"><img src="images/avatar.jpg" alt=""/></div>
+            <div class="mapTipList">
+                <h2>海南<span>Hainan</span></h2>
+                <ul>
+                    <li>2014年8月 三亚 自驾</li>
+                    <li>2011年6月 三亚</li>
+                    <li>2005年8月 三亚</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mapTipText mapTipText24">
+            <div class="mapTipImg"><img src="images/avatar.jpg" alt=""/></div>
+            <div class="mapTipList">
+                <h2>北京<span>Beijing</span></h2>
+                <ul>
+                    <li>2020年10月 北京 领奖</li>
+                    <li>2019年8月 北京 路过</li>
+                    <li>2019年4月 北京</li>
+                    <li>2018年5月 北京 比赛</li>
+                    <li>2008年6月 北京</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mapTipText mapTipText21">
+            <div class="mapTipImg"><img src="images/avatar.jpg" alt=""/></div>
+            <div class="mapTipList">
+                <h2>上海<span>Shanghai</span></h2>
+                <ul>
+                    <li>2020年8月 上海 实习</li>
+                    <li>2019年10月 上海</li>
+                    <li>2018年12月 路过</li>
+                    <li>2012年5月 上海</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mapTipText mapTipText6">
+            <div class="mapTipImg"><img src="images/avatar.jpg" alt=""/></div>
+            <div class="mapTipList">
+                <h2>浙江<span>Zhejiang</span></h2>
+                <ul>
+                    <li>2012年5月 杭州</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mapTipText mapTipText5">
+            <div class="mapTipImg"><img src="images/avatar.jpg" alt=""/></div>
+            <div class="mapTipList">
+                <h2>江苏<span>Jiangsu</span></h2>
+                <ul>
+                    <li>2019年10月 苏州 比赛</li>
+                    <li>2018年12月 苏州 无锡</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mapTipText mapTipText14">
+            <div class="mapTipImg"><img src="images/avatar.jpg" alt=""/></div>
+            <div class="mapTipList">
+                <h2>福建<span>Fujian</span></h2>
+                <ul>
+                    <li>2017年7月 厦门</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mapTipText mapTipText28">
+            <div class="mapTipImg"><img src="images/avatar.jpg" alt=""/></div>
+            <div class="mapTipList">
+                <h2>新疆<span>Xinjiang</span></h2>
+                <ul>
+                    <li>2018年8月 西行两万里 乌鲁木齐 塔里木盆地 中哈边境 自驾 </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mapTipText mapTipText11">
+            <div class="mapTipImg"><img src="images/avatar.jpg" alt=""/></div>
+            <div class="mapTipList">
+                <h2>甘肃<span>Gansu</span></h2>
+                <ul>
+                    <li>2018年8月 西行两万里 穿省 自驾 </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mapTipText mapTipText31">
+            <div class="mapTipImg"><img src="images/avatar.jpg" alt=""/></div>
+            <div class="mapTipList">
+                <h2>香港<span>HongKong</span></h2>
+                <ul>
+                    <li>2013年1月 路过</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mapTipText mapTipText12">
+            <div class="mapTipImg"><img src="images/avatar.jpg" alt=""/></div>
+            <div class="mapTipList">
+                <h2>湖北<span>Hubei</span></h2>
+                <ul>
+                    <li>2021年6月 武汉</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mapTipText mapTipText15">
+            <div class="mapTipImg"><img src="images/avatar.jpg" alt=""/></div>
+            <div class="mapTipList">
+                <h2>湖南<span>Hunan</span></h2>
+                <ul>
+                    <li>2021年6月 长沙 岳阳</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mapTipText mapTipText34">
+            <div class="mapTipImg"><img src="images/avatar.jpg" alt=""/></div>
+            <div class="mapTipList">
+                <h2>境外<span>Overseas</span></h2>
+                <ul>
+                    <li>2019年8月 英国 交流</li>
+                    <li>2017年8月 泰国</li>
+                    <li>2017年7月 柬埔寨</li>
+                    <li>2014年2月 马来西亚</li>
+                    <li>2013年1月 泰国</li>
+                    <li>2005年3月 新加坡 游学</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div>
+    <br>
+    <a href="https://wzw21.cn">回到首页</a>
+</div>
+<!--
+<div style="margin: 0 auto;width: 550px; float: left;">
+    <p>模版中的div.mapTipText的第二个classmapTipText1中的数字要对应目录js/res/chinaMapConfig.js中数据chinaMapConfig['names']['id'],才能正确显示对应省内容</p>
+    <h5>js函数目前提供参数列表</h5>
+    <textarea disabled="disabled" style="width:550px;height:290px;max-height: 290px; max-width: 550px;">
+    $('#ChinaMap').SVGMap({
+        mapWidth: 806,       //地图宽度
+        mapHeight: 396，     //地图高度
+        strokeWidth: 1,      //各省边界线宽度
+        strokeColor: 'F9FCFE',  //各省边界线颜色 默认 ：F9FCFE
+        strokeHoverColor: 'd9d9d9', //各省hover边界线颜色 默认 ：d9d9d9
+        stateInitColor: '',  //统一各省展示颜色 默认 ：不统一按chinaMapConfig.js里面设置的颜色展示
+        stateHoverColor: 'ffffff',  //各省hover展示颜色  默认 :  ffffff
+        stateDisabledColor: 'eeeeee',  //各省禁用展示颜色  默认 :  eeeeee
+        showTip: true,      //是否显示提示  默认显示
+        tipWidth: 280,      //展示内容（白色区域）宽度（单位：px）
+        tipHeight: 110,     //展示内容（白色区域）高度（单位：px）
+        tipOuterH : 30,     //展示内容在上下的连接（透明灰色区域）高度（单位：px）  这个展示的方向也可以单独配置在chinaMapConfig.js的chinaMapConfig['names']['direction']中设置
+        tipOuterW : 30,     //展示内容在左右的连接（透明灰色区域）宽度（单位：px）
+    });
+    </textarea>
+</div>
+-->
+
+</body>
+</html>
