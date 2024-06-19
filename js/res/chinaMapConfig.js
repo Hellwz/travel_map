@@ -42,9 +42,9 @@ var chinaMapConfig = {
 		heilongjiang: {id:0,name:'黑龙江',x:75,y:75,color:"c0f0ff",direction:"left"},
 		//color:"ffe7b8"
 		jilin:  {id:1,name:'吉林',x:42,y:25,color:"c0f0ff",direction:"left"},
-		liaoning: {id:2,name:'辽宁',x:38,y:24,color:"c0f0ff",direction:"left"},
-		hebei: {id:3,name:'河北',x:18,y:58,color:"c0f0ff",direction:"top"},
-		shandong: {id:4,name:'山东',x:26,y:24,color:"c0f0ff",direction:"left"},
+		liaoning: {id:2,name:'辽宁',x:38,y:24,color:"ffcca9",direction:"left"},
+		hebei: {id:3,name:'河北',x:18,y:58,color:"ffcca9",direction:"top"},
+		shandong: {id:4,name:'山东',x:26,y:24,color:"ffcca9",direction:"left"},
 		jiangsu: {id:5,name:'江苏',x:42,y:24,color:"ffcca9",direction:"left"},
 		//color:"c0f0ff"
 		zhejiang: {id:6,name:'浙江',x:21,y:23,color:"ffcca9",direction:"left"},
@@ -75,7 +75,7 @@ var chinaMapConfig = {
 		//color:"eed38b"
 		chongqing: {id:22,name:'重庆',x:20,y:30,color:"ffcca9",direction:"right"},
 		//color:"ffcca9"
-		tianjin: {id:23,name:'天津',x:15,y:10,color:"c0f0ff",direction:"left"},
+		tianjin: {id:23,name:'天津',x:15,y:10,color:"ffcca9",direction:"left"},
 		beijing: {id:24,name:'北京',x:12,y:1,color:"ffcca9",direction:"left"},
 		//color:"ffcca9"
 		neimongol: {id:26,name:'内蒙古',x:104,y:172,color:"c0f0ff",direction:"top"},
