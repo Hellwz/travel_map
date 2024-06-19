@@ -1,4 +1,4 @@
-var chinaMapConfig = {
+var ChinaMapConfig = {
 	width: 565,
 	height: 520,
 	shapes: {
